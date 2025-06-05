@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Photography - Event & Portrait Photography</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom styles for the Inter font and general body styling */
+      body {
+        font-family: "Inter", sans-serif;
+        /* Darker background for a minimalistic, high-contrast look */
+        @apply bg-gray-950 text-gray-200;
+      }
+      /* Simple animation for hero text */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-down {
+        animation: fadeInDown 1s ease-out forwards;
+      }
+      .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      /* Ensure smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Carousel specific styles */
+      .carousel-slide {
+        opacity: 0; /* Hidden by default */
+        transition: opacity 1s ease-in-out; /* Smooth fade transition */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .carousel-slide.active {
+        opacity: 1; /* Visible when active */
+        z-index: 10; /* Bring active slide to front */
+      }
+      .carousel-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+        z-index: 1;
+      }
+      .carousel-content {
+        position: relative;
+        z-index: 20;
+        max-width: 90%; /* Responsive content width */
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="bg-black text-white shadow-lg py-4 fixed w-full z-50 top-0">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Website Logo or Name - More subtle, impactful font -->
+        <a
+          href="#home"
+          class="text-3xl font-light tracking-widest uppercase rounded-md px-3 py-2 hover:text-gray-400 transition-colors"
+          >Your Studio</a
+        >
+        <!-- Navigation Menu - Clean, minimalist -->
+        <nav>
+          <ul class="flex space-x-8">
+            <li>
+              <a
+                href="#home"
+                class="hover:text-gray-400 transition-colors text-lg font-medium px-3 py-2"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="hover:text-gray-400 transition-colors text-lg font-medium px-3 py-2"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#all-portfolio"
+                class="hover:text-gray-400 transition-colors text-lg font-medium px-3 py-2"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="hover:text-gray-400 transition-colors text-lg font-medium px-3 py-2"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="border border-indigo-600 text-indigo-600 px-4 py-2 rounded-md hover:bg-indigo-600 hover:text-white transition-colors text-lg font-medium"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section id="home" class="relative h-screen overflow-hidden">
+      <!-- Slide 1 -->
+      <div
+        class="carousel-slide active"
+        style="
+          background-image: url('https://placehold.co/1920x1080/1A1A1A/FFFFFF?text=Capturing+Artistry');
+        "
+      >
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content text-white p-6 md:p-12">
+          <h1
+            class="text-4xl md:text-6xl font-thin mb-4 animate-fade-in-down leading-tight"
+          >
+            Crafting Visual Narratives
+          </h1>
+          <p
+            class="text-lg md:text-2xl mb-8 opacity-90 animate-fade-in-up font-light"
+          >
+            Event & Portrait Photography that speaks volumes.
+          </p>
+          <a
+            href="#all-portfolio"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            View Gallery
+          </a>
+          <a
+            href="#contact"
+            class="ml-4 bg-indigo-600 text-white font-light py-3 px-8 rounded-full hover:bg-indigo-700 transition-all duration-300 ease-in-out"
+          >
+            Book a Session
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="carousel-slide"
+        style="
+          background-image: url('https://placehold.co/1920x1080/333333/FFFFFF?text=Dynamic+Events');
+        "
+      >
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content text-white p-6 md:p-12">
+          <h1 class="text-4xl md:text-6xl font-thin mb-4 leading-tight">
+            Immortalizing Grand Moments
+          </h1>
+          <p class="text-lg md:text-2xl mb-8 opacity-90 font-light">
+            Your event, our lens, timeless memories.
+          </p>
+          <a
+            href="#event-portfolio"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            Explore Event Photography
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="carousel-slide"
+        style="
+          background-image: url('https://placehold.co/1920x1080/444444/FFFFFF?text=Stunning+Portraits');
+        "
+      >
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content text-white p-6 md:p-12">
+          <h1 class="text-4xl md:text-6xl font-thin mb-4 leading-tight">
+            Portraits That Tell Your Story
+          </h1>
+          <p class="text-lg md:text-2xl mb-8 opacity-90 font-light">
+            Capturing individuality with every click.
+          </p>
+          <a
+            href="#portrait-portfolio"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            View Portrait Portfolio
+          </a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div
+        class="carousel-slide"
+        style="
+          background-image: url('https://placehold.co/1920x1080/555555/FFFFFF?text=Cherished+Families');
+        "
+      >
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content text-white p-6 md:p-12">
+          <h1 class="text-4xl md:text-6xl font-thin mb-4 leading-tight">
+            Family Moments, Forever Yours
+          </h1>
+          <p class="text-lg md:text-2xl mb-8 opacity-90 font-light">
+            Authentic connections, beautifully preserved.
+          </p>
+          <a
+            href="#family-portfolio"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            See Family Photography
+          </a>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Arrows -->
+      <button
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full z-30 hover:bg-opacity-75 transition-colors"
+        id="prevBtn"
+        aria-label="Previous Slide"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          ></path>
+        </svg>
+      </button>
+      <button
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full z-30 hover:bg-opacity-75 transition-colors"
+        id="nextBtn"
+        aria-label="Next Slide"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Carousel Indicator Dots -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30"
+      >
+        <span
+          class="carousel-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 active:opacity-100 transition-opacity"
+          data-slide-index="0"
+        ></span>
+        <span
+          class="carousel-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 hover:opacity-75 transition-opacity"
+          data-slide-index="1"
+        ></span>
+        <span
+          class="carousel-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 hover:opacity-75 transition-opacity"
+          data-slide-index="2"
+        ></span>
+        <span
+          class="carousel-dot w-3 h-3 bg-white rounded-full cursor-pointer opacity-50 hover:opacity-75 transition-opacity"
+          data-slide-index="3"
+        ></span>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <main
+      id="services"
+      class="flex-grow container mx-auto px-4 py-16 mt-16 md:mt-24"
+    >
+      <!-- Added margin-top to account for fixed header -->
+      <h2 class="text-4xl font-thin text-center text-white mb-12 uppercase">
+        Our Photography Services
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Service Card 1: Event Photography -->
+        <div
+          class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"
+        >
+          <img
+            src="https://placehold.co/700x500/333333/FFFFFF?text=Events"
+            alt="Event Photography Cover"
+            class="w-full h-64 object-cover rounded-t-xl"
+          />
+          <div class="p-6">
+            <h3 class="text-2xl font-light text-white mb-3">
+              Event Photography
+            </h3>
+            <p class="text-gray-400 leading-relaxed text-sm mb-6">
+              Capturing the energy and emotion of your special occasions, from
+              corporate gatherings to private celebrations, so you can relive
+              every precious moment.
+            </p>
+            <div class="text-center">
+              <a
+                href="#event-portfolio"
+                class="border border-indigo-600 text-indigo-600 font-light py-2 px-6 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 ease-in-out"
+              >
+                Explore Events
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2: Portrait Photography -->
+        <div
+          class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"
+        >
+          <img
+            src="https://placehold.co/700x500/444444/FFFFFF?text=Portraits"
+            alt="Portrait Photography Cover"
+            class="w-full h-64 object-cover rounded-t-xl"
+          />
+          <div class="p-6">
+            <h3 class="text-2xl font-light text-white mb-3">
+              Portrait Photography
+            </h3>
+            <p class="text-gray-400 leading-relaxed text-sm mb-6">
+              Creating timeless portraits that reflect your personality, whether
+              for professional headshots, family photos, or individual artistic
+              sessions.
+            </p>
+            <div class="text-center">
+              <a
+                href="#portrait-portfolio"
+                class="border border-indigo-600 text-indigo-600 font-light py-2 px-6 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 ease-in-out"
+              >
+                Explore Portraits
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3: Family & Lifestyle -->
+        <div
+          class="bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"
+        >
+          <img
+            src="https://placehold.co/700x500/555555/FFFFFF?text=Family"
+            alt="Family Photography Cover"
+            class="w-full h-64 object-cover rounded-t-xl"
+          />
+          <div class="p-6">
+            <h3 class="text-2xl font-light text-white mb-3">
+              Family & Lifestyle
+            </h3>
+            <p class="text-gray-400 leading-relaxed text-sm mb-6">
+              Documenting the candid moments and genuine connections of your
+              family, creating cherished memories to look back on for years.
+            </p>
+            <div class="text-center">
+              <a
+                href="#family-portfolio"
+                class="border border-indigo-600 text-indigo-600 font-light py-2 px-6 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 ease-in-out"
+              >
+                Explore Family
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- General Portfolio Section (All work) -->
+    <section id="all-portfolio" class="bg-gray-900 py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-thin text-center text-white mb-12 uppercase">
+          Our Complete Portfolio
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- Reduced gap for tighter grid -->
+          <!-- Portfolio Item 1 (Event) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/666666/FFFFFF?text=Event+Photo+1"
+              alt="Event Photography Example 1"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Corporate Gala</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 2 (Portrait) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/777777/FFFFFF?text=Portrait+Photo+1"
+              alt="Portrait Photography Example 1"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Professional Headshot</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 3 (Event) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/888888/FFFFFF?text=Event+Photo+2"
+              alt="Event Photography Example 2"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Birthday Celebration</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 4 (Portrait) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/999999/FFFFFF?text=Portrait+Photo+2"
+              alt="Portrait Photography Example 2"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Outdoor Family Shoot</p>
+            </div>
+          </div>
+          <!-- Add more portfolio items as needed -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/AAAAAA/FFFFFF?text=Event+Photo+3"
+              alt="Event Photography Example 3"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Concert Energy</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/BBBBBB/FFFFFF?text=Portrait+Photo+3"
+              alt="Portrait Photography Example 3"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">
+                Artistic Studio Portrait
+              </p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Event+Photo+4"
+              alt="Event Photography Example 4"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Grand Opening</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/DDDDDD/FFFFFF?text=Portrait+Photo+4"
+              alt="Portrait Photography Example 4"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Senior Portraits</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specific Event Portfolio Section -->
+    <section id="event-portfolio" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-thin text-center text-white mb-12 uppercase">
+          Event Photography Portfolio
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- Relevant Event photos here (using placeholder for now) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/666666/FFFFFF?text=Event+1"
+              alt="Event Photography Example 1"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Corporate Gala</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/888888/FFFFFF?text=Event+2"
+              alt="Event Photography Example 2"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Birthday Celebration</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/AAAAAA/FFFFFF?text=Event+3"
+              alt="Event Photography Example 3"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Concert Energy</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Event+4"
+              alt="Event Photography Example 4"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Grand Opening</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            Inquire About Events
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specific Portrait Portfolio Section -->
+    <section id="portrait-portfolio" class="bg-gray-900 py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-thin text-center text-white mb-12 uppercase">
+          Portrait Photography Portfolio
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- Relevant Portrait photos here (using placeholder for now) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/777777/FFFFFF?text=Portrait+1"
+              alt="Portrait Photography Example 1"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Professional Headshot</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/999999/FFFFFF?text=Portrait+2"
+              alt="Portrait Photography Example 2"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Outdoor Family Shoot</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/BBBBBB/FFFFFF?text=Portrait+3"
+              alt="Portrait Photography Example 3"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">
+                Artistic Studio Portrait
+              </p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/DDDDDD/FFFFFF?text=Portrait+4"
+              alt="Portrait Photography Example 4"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Senior Portraits</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            Book a Portrait Session
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specific Family & Lifestyle Portfolio Section -->
+    <section id="family-portfolio" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-thin text-center text-white mb-12 uppercase">
+          Family & Lifestyle Portfolio
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <!-- Relevant Family/Lifestyle photos here (using placeholder for now) -->
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/AAAAAA/FFFFFF?text=Family+1"
+              alt="Family Photography Example 1"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Candid Family Moment</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/BBBBBB/FFFFFF?text=Family+2"
+              alt="Family Photography Example 2"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Generational Photo</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Family+3"
+              alt="Family Photography Example 3"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Outdoor Playtime</p>
+            </div>
+          </div>
+          <div
+            class="relative group rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <img
+              src="https://placehold.co/600x400/DDDDDD/FFFFFF?text=Family+4"
+              alt="Family Photography Example 4"
+              class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <p class="text-white text-xl font-light">Maternity Session</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white font-light py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+          >
+            Plan Your Family Shoot
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-900 py-16 px-4">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center gap-12"
+      >
+        <div class="md:w-1/2">
+          <img
+            src="https://placehold.co/600x600/222222/FFFFFF?text=Your+Photo"
+            alt="Photographer's Photo"
+            class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover mx-auto shadow-xl border-4 border-gray-700 transform hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-4xl font-thin text-white mb-6 uppercase">
+            About Your Photography Journey
+          </h2>
+          <p class="text-gray-400 leading-relaxed text-lg mb-4">
+            Hello! I'm [Your Name], a passionate photographer dedicated to
+            capturing the raw emotion and genuine beauty in every moment. With a
+            keen eye for detail and a love for storytelling, I specialize in
+            both vibrant **event photography** and intimate **portrait
+            sessions**.
+          </p>
+          <p class="text-gray-400 leading-relaxed text-lg mb-4">
+            My approach is to create a comfortable and enjoyable experience for
+            all my clients, ensuring that your unique personality shines through
+            in every shot. Whether it's the grandeur of a wedding, the energy of
+            a corporate event, or the subtle nuances of a family portrait, I
+            strive to deliver stunning images that you'll cherish for a
+            lifetime.
+          </p>
+          <p class="text-gray-400 leading-relaxed text-lg">
+            Based in [Your City/Region], I'm available for bookings across
+            [mention areas or note travel availability]. Let's create something
+            beautiful together!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-black py-16 px-4 text-white">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-thin text-center mb-12 uppercase">
+          What Our Clients Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-xl border border-gray-700"
+          >
+            <p class="text-xl italic mb-6">
+              "Your Photography truly captured the essence of our wedding day.
+              Every photo tells a story, and the portraits are simply
+              breathtaking. Highly recommend!"
+            </p>
+            <p class="font-light text-lg">- Sarah & David, Wedding Clients</p>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-xl border border-gray-700"
+          >
+            <p class="text-xl italic mb-6">
+              "I needed professional headshots, and [Your Name]'s approach was
+              fantastic. Made me feel at ease, and the results exceeded my
+              expectations. So happy with my new photos!"
+            </p>
+            <p class="font-light text-lg">- John Doe, Portrait Client</p>
+          </div>
+          <!-- Add more testimonials -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action / Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-gray-950">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-thin text-white mb-6 uppercase">
+          Ready to Capture Your Moments?
+        </h2>
+        <p class="text-xl text-gray-400 mb-8">
+          Let's discuss your event or portrait photography needs. Get in touch
+          for a personalized quote!
+        </p>
+        <a
+          href="mailto:your.email@example.com"
+          class="bg-indigo-600 text-white font-light py-4 px-10 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out text-xl"
+        >
+          Email Us Today
+        </a>
+        <p class="mt-8 text-gray-500 text-lg">
+          Or call us at:
+          <a href="tel:+1234567890" class="text-indigo-600 hover:underline"
+            >+123 456 7890</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-gray-400 py-8 mt-auto">
+      <div class="container mx-auto px-4 text-center">
+        <p class="mb-4">&copy; 2025 Your Photography. All rights reserved.</p>
+        <div class="flex justify-center space-x-8 text-lg">
+          <a href="#" class="hover:text-white transition-colors"
+            >Privacy Policy</a
+          >
+          <a href="#" class="hover:text-white transition-colors"
+            >Terms of Service</a
+          >
+          <a href="#" class="hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="hover:text-white transition-colors">Facebook</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Carousel Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".carousel-slide");
+        const dots = document.querySelectorAll(".carousel-dot");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+          // Hide all slides and reset dot opacity
+          slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            slide
+              .querySelector(".carousel-content")
+              .querySelectorAll("h1, p, a")
+              .forEach((el) => {
+                el.classList.remove(
+                  "animate-fade-in-down",
+                  "animate-fade-in-up"
+                );
+              });
+            dots[i].classList.remove("opacity-100");
+            dots[i].classList.add("opacity-50");
+          });
+
+          // Show the current slide and activate corresponding dot
+          slides[index].classList.add("active");
+          slides[index]
+            .querySelector("h1")
+            .classList.add("animate-fade-in-down");
+          slides[index].querySelector("p").classList.add("animate-fade-in-up");
+          slides[index]
+            .querySelectorAll(".carousel-content a")
+            .forEach((el) => {
+              el.classList.add("animate-fade-in-up"); // Re-apply for buttons
+            });
+          dots[index].classList.add("opacity-100");
+          dots[index].classList.remove("opacity-50");
+
+          currentSlide = index;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(currentSlide);
+        }
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener("click", () => {
+          resetInterval();
+          nextSlide();
+        });
+        prevBtn.addEventListener("click", () => {
+          resetInterval();
+          prevSlide();
+        });
+
+        // Event listeners for dots
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            const index = parseInt(e.target.dataset.slideIndex);
+            resetInterval();
+            showSlide(index);
+          });
+        });
+
+        // Auto-play functionality
+        function startInterval() {
+          slideInterval = setInterval(nextSlide, 7000); // Change slide every 7 seconds
+        }
+
+        function resetInterval() {
+          clearInterval(slideInterval);
+          startInterval(); // Restart the interval after manual navigation
+        }
+
+        // Initialize carousel
+        showSlide(currentSlide);
+        startInterval();
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            // Only prevent default for internal links that are not part of the carousel buttons
+            // Carousel buttons have their own JS logic or lead to different sections
+            if (!this.closest(".carousel-content")) {
+              // Check if not inside carousel content
+              e.preventDefault();
+              const targetId = this.getAttribute("href");
+              const targetElement = document.querySelector(targetId);
+
+              // Adjust scroll position for fixed header
+              if (targetElement) {
+                const headerOffset =
+                  document.querySelector("header").offsetHeight;
+                const elementPosition =
+                  targetElement.getBoundingClientRect().top;
+                const offsetPosition =
+                  elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
